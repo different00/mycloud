@@ -1,9 +1,6 @@
 FROM ubuntu
 RUN apt update --fix-missing
-RUN sed -i "s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g" /etc/apt/sources.list \
-    && rm -rf /var/lib/apt/lists/* \
-        && apt-get update --fix-missing
-RUN UBUNTU_FRONTEND=noninteractive apt install qemu-kvm *zenhei* xz-utils dbus-x11 x-window-system-core curl firefox-esr chromium gnome-system-monitor mate-system-monitor  git xfce4 xfce4-terminal tightvncserver wget   -y
+RUN apt install qemu-kvm *zenhei* xz-utils dbus-x11 x-window-system-core curl firefox-esr chromium gnome-system-monitor mate-system-monitor  git xfce4 xfce4-terminal tightvncserver wget   -y
 RUN wget https://github.com/novnc/noVNC/archive/refs/tags/v1.2.0.tar.gz
 RUN curl -LO https://proot.gitlab.io/proot/bin/proot
 RUN chmod 755 proot
