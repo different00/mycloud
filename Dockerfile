@@ -1,14 +1,14 @@
-FROM debian
+FROM ubuntu:20.04
 RUN apt update
 RUN apt upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt install qemu-kvm *zenhei* xz-utils dbus-x11 x-window-system-core curl firefox-esr chromium gnome-system-monitor mate-system-monitor  git gnome xfce4-terminal tightvncserver wget   -y
+RUN DEBIAN_FRONTEND=noninteractive apt install qemu-kvm *zenhei* xz-utils dbus-x11 x-window-system-core curl firefox-esr chromium gnome-system-monitor mate-system-monitor  git xfce4 xfce4-terminal tightvncserver wget   -y
 RUN wget https://github.com/novnc/noVNC/archive/refs/tags/v1.2.0.tar.gz
 RUN curl -LO https://proot.gitlab.io/proot/bin/proot
 RUN chmod 755 proot
 RUN mv proot /bin
 RUN tar -xvf v1.2.0.tar.gz
 RUN mkdir  $HOME/.vnc
-RUN echo 'luo' | vncpasswd -f > $HOME/.vnc/passwd
+RUN echo '114514' | vncpasswd -f > $HOME/.vnc/passwd
 RUN chmod 600 $HOME/.vnc/passwd
 RUN echo 'whoami ' >>/luo.sh
 RUN echo 'cd ' >>/luo.sh
