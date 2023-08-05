@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM debian:11
 RUN apt update
 RUN apt upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt install qemu-kvm *zenhei* xz-utils dbus-x11 x-window-system-core curl firefox-esr chromium gnome-system-monitor mate-system-monitor  git xfce4 xfce4-terminal tightvncserver wget   -y
