@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt update
+RUN apt update --fix-missing
 RUN sed -i "s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g" /etc/apt/sources.list \
     && rm -rf /var/lib/apt/lists/* \
         && apt-get update --fix-missing
